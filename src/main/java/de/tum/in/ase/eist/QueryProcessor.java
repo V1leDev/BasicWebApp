@@ -76,6 +76,17 @@ public class QueryProcessor {
                 }
             }
             return Arrays.toString(primes.toArray());
+        } else if (query.contains("which of the following numbers is both a square and a cube")) {
+            String str = query.replaceAll("[^0-9]+", " ");
+            var arr = Arrays.asList(str.trim().split(" "));
+            var res = new ArrayList<>();
+            for (var s:arr
+                 ) {
+                if (Math.sqrt(Integer.parseInt(s)) == (int) Math.sqrt(Integer.parseInt(s)) && Math.cbrt(Integer.parseInt(s)) == (int) Math.cbrt(Integer.parseInt(s))) {
+                    res.add(s);
+                }
+            }
+            return Arrays.toString(res.toArray());
         } else if (query.contains("tower")) {
             return "Paris";
         } else if (query.contains("which of the following numbers is the largest: 53, 818, 12, 934")) {
