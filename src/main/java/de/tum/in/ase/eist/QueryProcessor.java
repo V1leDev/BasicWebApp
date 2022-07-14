@@ -2,7 +2,6 @@ package de.tum.in.ase.eist;
 
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 @Service
@@ -26,6 +25,8 @@ public class QueryProcessor {
             return "6";
         } else if (query.contains("what is 19 plus 0")) {
             return "19";
+        } else if (query.contains("who played")) {
+            return "Joseph Wiseman";
         } else if (query.contains("plus")) {
             String str = query.replaceAll("[^0-9]+", " ");
             var arr = Arrays.asList(str.trim().split(" "));
