@@ -10,8 +10,9 @@ public class QueryProcessor {
         if (n == 1 || n == 0) {
             return n;
         }
-        return fib(n-1) + fib(n-2);
+        return fib(n - 1) + fib(n - 2);
     }
+
     public String process(String query) {
         query = query.toLowerCase();
         if (query.contains("shakespeare")) {
@@ -55,7 +56,7 @@ public class QueryProcessor {
             int a = Integer.parseInt(arr.get(0));
             int b = Integer.parseInt(arr.get(1));
             return String.valueOf(a * b);
-        } else if (query.contains("which city is the Eiffel tower in")) {
+        } else if (query.contains("tower")) {
             return "Paris";
         } else if (query.contains("which of the following numbers is the largest: 53, 818, 12, 934")) {
             return "934";
