@@ -2,6 +2,7 @@ package de.tum.in.ase.eist;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 @Service
@@ -37,6 +38,8 @@ public class QueryProcessor {
             int a = Integer.parseInt(arr.get(0));
             int b = Integer.parseInt(arr.get(1));
             return String.valueOf(a * b);
+        } else if (query.contains("which city is the Eiffel tower in")) {
+            return "Paris";
         } else if (query.contains("which of the following numbers is the largest: 53, 818, 12, 934")) {
             return "934";
         } else if (query.contains("which of the following numbers is the largest:")) {
