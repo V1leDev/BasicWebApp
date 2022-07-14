@@ -22,11 +22,7 @@ class QueryProcessorTest {
 		}
 	}
 
-	@Test
-	void testBiggerNumber() {
-		String actual = queryProcessor.process("which of the following numbers is the largest: 53, 818, 12, 934");
-		assertEquals("934", actual);
-	}
+
 
 	@Test
 	void isNotCaseSensitive() {
@@ -35,10 +31,6 @@ class QueryProcessorTest {
 			fail("Your QueryProcessor should not be case sensitive.");
 		}
 	}
-	@Test
-	void addition() {
-		String actual = queryProcessor.process("what is 8 plus 8");
-		assertEquals("16", actual);
-	}
+
 
 }
