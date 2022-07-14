@@ -6,7 +6,12 @@ import java.util.Arrays;
 
 @Service
 public class QueryProcessor {
-
+    public static int fib(int n) {
+        if (n == 1 || n == 0) {
+            return n;
+        }
+        return fib(n-1) + fib(n-2);
+    }
     public String process(String query) {
         query = query.toLowerCase();
         if (query.contains("shakespeare")) {
@@ -33,6 +38,11 @@ public class QueryProcessor {
             int a = Integer.parseInt(arr.get(0));
             int b = Integer.parseInt(arr.get(1));
             return String.valueOf(a + b);
+        } else if (query.contains("sequence")) {
+            String str = query.replaceAll("[^0-9]+", " ");
+            var arr = Arrays.asList(str.trim().split(" "));
+            int n = Integer.parseInt(arr.get(0));
+            return String.valueOf(fib(n));
         } else if (query.contains("multiplied")) {
             String str = query.replaceAll("[^0-9]+", " ");
             var arr = Arrays.asList(str.trim().split(" "));
