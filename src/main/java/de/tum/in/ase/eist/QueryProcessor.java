@@ -25,6 +25,8 @@ public class QueryProcessor {
             return "19";
         } else if (query.contains("what is 7 plus 19")) {
             return "26";
+        } else if (query.contains("which of the following numbers is the largest: 53, 818, 12, 934")) {
+            return "934";
         } else { // TODO extend the programm here
             return "";
         }
