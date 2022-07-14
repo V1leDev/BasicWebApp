@@ -38,6 +38,12 @@ public class QueryProcessor {
             int a = Integer.parseInt(arr.get(0));
             int b = Integer.parseInt(arr.get(1));
             return String.valueOf(a + b);
+        } else if (query.contains("minus")) {
+            String str = query.replaceAll("[^0-9]+", " ");
+            var arr = Arrays.asList(str.trim().split(" "));
+            int a = Integer.parseInt(arr.get(0));
+            int b = Integer.parseInt(arr.get(1));
+            return String.valueOf(a - b);
         } else if (query.contains("sequence")) {
             String str = query.replaceAll("[^0-9]+", " ");
             var arr = Arrays.asList(str.trim().split(" "));
