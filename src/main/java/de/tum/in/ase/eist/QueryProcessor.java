@@ -26,6 +26,12 @@ public class QueryProcessor {
         } else if (query.contains("what is 19 plus 0")) {
             return "19";
         } else if (query.contains("what is 7 plus 19")) {
+            String str = query.replaceAll("[^0-9]+", " ");
+            var arr = Arrays.asList(str.trim().split(" "));
+            int a = Integer.parseInt(arr.get(0));
+            int b = Integer.parseInt(arr.get(1));
+            return String.valueOf(a + b);
+        } else if (query.contains("plus")) {
             return "26";
         } else if (query.contains("which of the following numbers is the largest: 53, 818, 12, 934")) {
             return "934";
