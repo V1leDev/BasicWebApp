@@ -31,6 +31,12 @@ public class QueryProcessor {
             int a = Integer.parseInt(arr.get(0));
             int b = Integer.parseInt(arr.get(1));
             return String.valueOf(a + b);
+        } else if (query.contains("multiplied")) {
+            String str = query.replaceAll("[^0-9]+", " ");
+            var arr = Arrays.asList(str.trim().split(" "));
+            int a = Integer.parseInt(arr.get(0));
+            int b = Integer.parseInt(arr.get(1));
+            return String.valueOf(a * b);
         } else if (query.contains("which of the following numbers is the largest: 53, 818, 12, 934")) {
             return "934";
         } else if (query.contains("which of the following numbers is the largest:")) {
