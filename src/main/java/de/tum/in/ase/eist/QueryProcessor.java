@@ -2,6 +2,7 @@ package de.tum.in.ase.eist;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 @Service
@@ -11,6 +12,14 @@ public class QueryProcessor {
             return n;
         }
         return fib(n - 1) + fib(n - 2);
+    }
+
+    static boolean ip(int num) {
+        if (num <= 1) return false;
+        for (int i = 2; i < num / 2; i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
     }
 
     public String process(String query) {
@@ -56,6 +65,17 @@ public class QueryProcessor {
             int a = Integer.parseInt(arr.get(0));
             int b = Integer.parseInt(arr.get(1));
             return String.valueOf(a * b);
+        } else if (query.contains("which of the following numbers are primes")) {
+            String str = query.replaceAll("[^0-9]+", " ");
+            var arr = Arrays.asList(str.trim().split(" "));
+            var primes = new ArrayList<>();
+            for (var s:arr
+                 ) {
+                if (ip(Integer.parseInt(s))) {
+                    primes.add(s);
+                }
+            }
+            return Arrays.toString(primes.toArray());
         } else if (query.contains("tower")) {
             return "Paris";
         } else if (query.contains("which of the following numbers is the largest: 53, 818, 12, 934")) {
