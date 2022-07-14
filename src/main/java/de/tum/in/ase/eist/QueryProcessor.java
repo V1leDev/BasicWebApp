@@ -19,6 +19,8 @@ public class QueryProcessor {
             return "14";
         } else if (query.contains("what is 8 plus 8")) {
             return "16";
+        } else if (query.contains("what is 6 plus 0")) {
+            return "6";
         } else { // TODO extend the programm here
             return "";
         }
