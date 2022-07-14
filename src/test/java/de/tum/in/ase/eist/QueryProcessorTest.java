@@ -23,6 +23,12 @@ class QueryProcessorTest {
 	}
 
 	@Test
+	void testBiggerNumber() {
+		String actual = queryProcessor.process("which of the following numbers is the largest: 53, 818, 12, 934");
+		assertEquals("934", actual);
+	}
+
+	@Test
 	void isNotCaseSensitive() {
 		String actual = queryProcessor.process("shakespeare");
 		if (!actual.contains("playwright")) {
