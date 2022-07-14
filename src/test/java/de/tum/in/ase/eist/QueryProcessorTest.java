@@ -35,5 +35,10 @@ class QueryProcessorTest {
 			fail("Your QueryProcessor should not be case sensitive.");
 		}
 	}
+	@Test
+	void addition() {
+		String actual = queryProcessor.process("what is 8 plus 8");
+		assertEquals("16", actual);
+	}
 
 }
